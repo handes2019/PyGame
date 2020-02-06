@@ -26,9 +26,9 @@ class Ship():
         """根据移动标志调整飞船的位置"""
         # 更新飞船的center值，而不是rect
         if self.moving_right:
-            self.rect.center += self.ai_settings.ship_speed_factor
+            self.center += self.ai_settings.ship_speed_factor
         if self.moving_left:
-            self.rect.center -= self.ai_settings.ship_speed_factor
+            self.center -= self.ai_settings.ship_speed_factor
 
         # 根据self.center更新rect对象
         self.rect.centerx = self.center
