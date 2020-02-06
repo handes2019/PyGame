@@ -1,7 +1,7 @@
 import pygame
 
 class Ship():
-    def __iadd__(self, screen):
+    def __init__(self, screen):
         """ 初始化飞船并设置起初始化位置 """
         self.screen = screen
 
