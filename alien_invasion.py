@@ -7,6 +7,7 @@ from ship import Ship
 from alien import Alien
 import game_functions as gf
 from game_stats import GameStats
+from button import Button
 
 def run_game():
     # 初始化游戏并创建一个屏幕对象
@@ -18,6 +19,9 @@ def run_game():
 
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
+
+    #创建Play按钮
+    play_button = Button(ai_settings, screen, "Play")
 
     #创建一个用于存储游戏统计信息的实例
     stats = GameStats(ai_settings)
@@ -54,7 +58,7 @@ def run_game():
 
 
 
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
 
 
 
